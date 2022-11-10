@@ -14,7 +14,7 @@
         <tr onclick="city({{$city->country_id}})">
             <td>{{$city->city_id}}</td>
             <td>{{$city->city}}</td>
-            <td>{{$city->country_id}}</td>
+            <td><a href="http://localhost:8000/countries/{{$city->country_id}}">{{$city->country_id}}</a></td>
             <td>{{$city->last_update}}</td>
         </tr>
         @endforeach
@@ -23,6 +23,9 @@
 <script>
     function city(id){
         window.location="http://localhost:8000/cities/"+id;
+    }
+    function country(id){
+        window.location="http://localhost:8000/countries/"+id;
     }
 </script>
 @endsection

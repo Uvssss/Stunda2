@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ActorController;
 use App\Http\Controllers\CityController;
+use App\Http\Controllers\CountryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +21,8 @@ Route::get('/', function () {
 });
 Route::get('/actor/{actor_id}',[ActorController::class,'index']);
 Route::get('/cities/{country_id}',[CityController::class,'index']);
-
+Route::get('/countries/{country_id}',[CountryController::class,'index']);
 
 Route::get('/cities',[CityController::class,'index']);
 Route::get('/actor',[ActorController::class,'index']);
+Route::get('/countries',[CountryController::class,'index']);
