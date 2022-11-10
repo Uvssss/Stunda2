@@ -11,8 +11,8 @@
     </thead>
     <tbody>
         @foreach ($actors as $actor)
-        <tr>
-            <td><a href="/actor/{{$actor->actor_id}}">{{$actor->actor_id}}</a></td>
+        <tr onclick="actor({{$actor->actor_id}})">
+            <td>{{$actor->actor_id}}</td>
             <td>{{$actor->first_name}}</td>
             <td>{{$actor->last_name}}</td>
             <td>{{$actor->last_update}}</td>
@@ -20,4 +20,9 @@
         @endforeach
     </tbody>
 </table>
+<script>
+    function actor(id){
+        window.location="http://localhost:8000/actor/"+id;
+    }
+</script>
 @endsection
