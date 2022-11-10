@@ -11,8 +11,8 @@
     </thead>
     <tbody>
         @foreach ($actors as $actor)
-        <tr onclick="">
-            <td>{{$actor->actor_id}}</td>
+        <tr>
+            <td><a href="/actor/{{$actor->actor_id}}">{{$actor->actor_id}}</a></td>
             <td>{{$actor->first_name}}</td>
             <td>{{$actor->last_name}}</td>
             <td>{{$actor->last_update}}</td>
