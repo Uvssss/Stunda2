@@ -90,4 +90,8 @@ class CityController extends Controller
     {
         //
     }
+    public function getcountry($country_id)
+    {
+         dd($country_id);
+    }
 }

@@ -18,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/actor',[ActorController::class,'index']);
+Route::get('/actor/{actor_id}',[ActorController::class,'index']);
+Route::get('/cities/{country_id}',[CityController::class,'index']);
+
+
 Route::get('/cities',[CityController::class,'index']);
-//Route::get('/cities?id=:id',[CityController::class,'index',$id]);
+Route::get('/actor',[ActorController::class,'index']);

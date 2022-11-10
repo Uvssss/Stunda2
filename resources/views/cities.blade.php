@@ -14,7 +14,7 @@
         <tr>
             <td>{{$city->city_id}}</td>
             <td>{{$city->city}}</td>
-            <td>{{$city->country_id}}</td>
+            <td><a href="cities/{{$city->country_id}}">{{$city->country_id}}</a></td>
             <td>{{$city->last_update}}</td>
         </tr>
         @endforeach

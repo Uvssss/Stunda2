@@ -11,7 +11,7 @@
     </thead>
     <tbody>
         @foreach ($actors as $actor)
-        <tr>
+        <tr onclick="">
             <td>{{$actor->actor_id}}</td>
             <td>{{$actor->first_name}}</td>
             <td>{{$actor->last_name}}</td>

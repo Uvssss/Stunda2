@@ -12,9 +12,16 @@ class ActorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id = null)
     {
-        $res=Actor::all();
+        $res=null;
+        if(!empty($id)){
+            $res=Actor::where("actor_id",$id)->get();
+        }
+        else{
+            $res=Actor::all();
+        }
+        //dd($res[0]->city);
         return view('actor',['title'=>'actor',"actors"=>$res]);
     }
 
@@ -83,4 +90,5 @@ class ActorController extends Controller
     {
         //
     }
+
 }
