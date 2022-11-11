@@ -1,6 +1,5 @@
 <?php
 
-use Carbon\Factory;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -14,13 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('check_list_details', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('list_id');
+            $table->foreign("list_id")->references("id")
+                ->on("check_lists")->onDelete("cascade");
             $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('check_list_details');
     }
 };

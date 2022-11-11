@@ -10,7 +10,7 @@
     </thead>
     <tbody>
         @foreach ($countries as $city)
-        <tr>
+        <tr onclick="country({{$city->country_id}})">
             <td>{{$city->country_id}}</td>
             <td>{{$city->country}}</td>
             <td>{{$city->last_update}}</td>
